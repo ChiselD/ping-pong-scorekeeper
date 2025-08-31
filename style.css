@@ -1,0 +1,33 @@
+html, body {
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+
+#container {
+	font-family: Arial, sans-serif;
+	border: 2px inset lightgray;
+	display: block;
+	margin: 0 auto;
+	max-width: 30em;
+	max-height: fit-content;
+}
+
+img {
+	max-width: 30em;
+	max-height: 30em;
+}
+
+h1 {
+	border-bottom: 1px solid lightgray;
+	font-size: 1em;
+}
+
+#score {
+	font-size: 3em;
+	font-weight: bold;
+}
+
+span {
+	font-weight: bold;
+}
