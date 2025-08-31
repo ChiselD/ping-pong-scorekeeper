@@ -1,0 +1,1 @@
+This is the "ping pong scorekeeper" project from Colt Steele's "Web Dev Bootcamp" course (his concept and design; all my own original code);
