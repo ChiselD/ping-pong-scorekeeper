@@ -9,7 +9,7 @@ html, body {
 	border: 2px inset lightgray;
 	display: block;
 	margin: 0 auto;
-	max-width: 30em;
+	max-width: fit-content;
 	max-height: fit-content;
 }
 
@@ -18,9 +18,15 @@ img {
 	max-height: 30em;
 }
 
+#gameData {
+	padding: 0 1em 1em;
+}
+
 h1 {
 	border-bottom: 1px solid lightgray;
 	font-size: 1em;
+	font-weight: 700;
+	padding: 1em;
 }
 
 #scoreDisplay {
@@ -30,6 +36,29 @@ h1 {
 
 span {
 	font-weight: bold;
+}
+
+select {
+	border-radius: 20px;
+	padding: 0.2em 1em;
+	background-color: white;
+}
+
+#buttons {
+	display: flex;
+	/*align-content: stretch;*/
+	justify-content: space-between;
+}
+
+#buttons * {
+	/*align-items: stretch;*/
+	/*display: flex;*/
+	/*flex-direction: row;*/
+	/*flex: 3;*/
+	color: white;
+	flex-grow: 1;
+	border-radius: 0;
+	border: 2px transparent inset;
 }
 
 .winner {
