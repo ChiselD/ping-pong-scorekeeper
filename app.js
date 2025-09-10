@@ -11,11 +11,23 @@ let p1score = 0;
 let p2score = 0;
 let currentScore = p1score + p2score;
 
-// When changing dropdown selector, adjust maxScore value correspondingly
-numGames.addEventListener("change", (e) => {
-	maxScore = e.target.value;
-	console.log("new maxScore value: " + maxScore);
-});
+
+// On clicking reset, put everything back to how it started
+const resetGame = () => {
+	// reset JS values
+	maxScore = 3;
+	numGames.value = 3;
+	p1score = 0;
+	p2score = 0;
+	currentScore = p1score + p2score;
+	btn1.removeAttribute("disabled");
+	btn2.removeAttribute("disabled");
+	// reset HTML displays
+	p1ScoreDisplay.innerText = 0;
+	p1ScoreDisplay.setAttribute("class", "");
+	p2ScoreDisplay.innerText = 0;
+	p2ScoreDisplay.setAttribute("class", "");
+}
 
 // Track player 1's score
 btn1.addEventListener("click", () => {
@@ -35,6 +47,13 @@ btn2.addEventListener("click", () => {
 	isGameOver(currentScore, maxScore);
 });
 
+// When changing dropdown selector, adjust maxScore value correspondingly
+numGames.addEventListener("change", (e) => {
+	maxScore = e.target.value;
+	numGames.value = e.target.value;
+	console.log("maxScore is now: " + maxScore);
+});
+
 // With every turn, check if maxScore has been reached
 const isGameOver = (curr, max) => {
 	if (parseInt(curr) === parseInt(max)) {
@@ -50,22 +69,6 @@ const isGameOver = (curr, max) => {
 		btn1.disabled = "true";
 		btn2.disabled = "true";
 	}		
-}
-
-// On clicking reset, put everything back to how it started
-const resetGame = () => {
-	// reset JS values
-	maxScore = 3;
-	p1score = 0;
-	p2score = 0;
-	currentScore = p1score + p2score;
-	btn1.removeAttribute("disabled");
-	btn2.removeAttribute("disabled");
-	// reset HTML displays
-	p1ScoreDisplay.innerText = 0;
-	p1ScoreDisplay.setAttribute("class", "");
-	p2ScoreDisplay.innerText = 0;
-	p2ScoreDisplay.setAttribute("class", "");
 }
 
 btnReset.addEventListener("click", () => {
